@@ -68,9 +68,9 @@ class Cqssc
                 return '豹子';
             } else if ($num[0] == $num[1] || $num[0] == $num[2] || $num[1] == $num[2]) {
                 return '对子';
-            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || sorts($hm, 3)) {
+            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || $this->sorts($hm, 3)) {
                 return '顺子';
-            } else if (preg_match($match, $a) || sorts($hm, 2)) {
+            } else if (preg_match($match, $a) || $this->sorts($hm, 2)) {
                 return '半顺';
             } else {
                 return '杂六';
@@ -104,9 +104,9 @@ class Cqssc
                 return '豹子';
             } else if ($num[1] == $num[2] || $num[1] == $num[3] || $num[2] == $num[3]) {
                 return '对子';
-            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || sorts($hm, 3)) {
+            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || $this->sorts($hm, 3)) {
                 return '顺子';
-            } else if (preg_match($match, $a) || sorts($hm, 2)) {
+            } else if (preg_match($match, $a) || $this->sorts($hm, 2)) {
                 return '半顺';
             } else {
                 return '杂六';
@@ -140,9 +140,9 @@ class Cqssc
                 return '豹子';
             } else if ($num[2] == $num[3] || $num[2] == $num[4] || $num[3] == $num[4]) {
                 return '对子';
-            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || sorts($hm, 3)) {
+            } else if ($a == '019' || $a == '091' || $a == '098' || $a == '089' || $a == '109' || $a == '190' || $a == '901' || $a == '910' || $a == '809' || $a == '890' || $this->sorts($hm, 3)) {
                 return '顺子';
-            } else if (preg_match($match, $a) || sorts($hm, 2)) {
+            } else if (preg_match($match, $a) || $this->sorts($hm, 2)) {
                 return '半顺';
             } else {
                 return '杂六';
@@ -386,7 +386,7 @@ class Cqssc
     }
 
 
-    public function sorts($a, $p)
+    public function sorts(array $a,int $p):bool
     {
         $i = 0;
         foreach ($a as $k => $v) {
